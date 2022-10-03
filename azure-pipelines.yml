@@ -27,7 +27,7 @@ stages:
         {
             Write-Host "CS File to change -", $MyFile
             
-            (Get-Content $MyFile -Encoding UTF8) -replace 'new Ga1Service()', 'new Ga2Service()' | Set-Content $MyFile 
+            (Get-Content $MyFile -Encoding UTF8) -replace 'Ga1Service', 'Ga2Service' | Set-Content $MyFile 
             Write-Host "CS File changed -", $MyFile 
             Write-Host " -----------------------------------"
         }
