@@ -33,8 +33,6 @@ namespace TailSpin.SpaceGame.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-            services.AddSingleton<ILeaderboardServiceClient>(new LeaderboardFunctionClient(this.Configuration.GetSection("AppSettings").GetValue(typeof(string), "LeaderboardFunctionUrl").ToString()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
