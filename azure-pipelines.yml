@@ -22,7 +22,7 @@ stages:
         Write-Host "Get and modify HomeController", $(Agent.WorkFolder)
         Write-Host "------------------------------------------------------------"
         
-        $AllJSFIleToManage = Get-ChildItem -Path $(Agent.WorkFolder)\*.cs -Recurse -Force  |  Select-String -Pattern "new Ga1Service() " -AllMatches | Foreach {$_.Path} | Select-Object -Unique
+        $AllJSFIleToManage = Get-ChildItem -Path $(Agent.WorkFolder)\*.cs -Recurse -Force  |  Select-String -Pattern "new Ga1Service()" -AllMatches | Foreach {$_.Path} | Select-Object -Unique
         foreach ($MyFile in $AllJSFIleToManage)
         {
             Write-Host "CS File to change -", $MyFile
