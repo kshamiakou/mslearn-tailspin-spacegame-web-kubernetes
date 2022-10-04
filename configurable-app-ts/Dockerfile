@@ -2,6 +2,7 @@ FROM node:16 AS ts-builder
 WORKDIR /app
 COPY . .
 RUN npm install
+RUN npm install tsc -g
 RUN tsc
 
 FROM node:16 AS ts-prod
