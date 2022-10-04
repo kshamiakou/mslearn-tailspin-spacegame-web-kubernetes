@@ -1,0 +1,32 @@
+{
+  "name": "configurable-app",
+  "version": "1.0.0",
+  "description": "gagaga",
+  "main": "index.js",
+  "author": "kiryl shamiakou",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --config nodemon.json src/app.ts",
+    "start": "ts-node src/app.ts"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.4",
+    "pino": "^8.6.1",
+    "pino-pretty": "^9.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/body-parser": "^1.19.2",
+    "@types/config": "^3.3.0",
+    "@types/cors": "^2.8.12",
+    "@types/node": "^18.8.2",
+    "@types/pino": "^7.0.5"
+  }
+}
