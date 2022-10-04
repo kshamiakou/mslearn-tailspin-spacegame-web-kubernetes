@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
 
 export const handleRootRequest = (request: Request, response: Response) => {
-    response.send({ ga: 1 });
+    response.send({ gagaga: 1 });
 }

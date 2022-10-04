@@ -1,12 +1,13 @@
-FROM node:16
- 
+FROM node:16 AS ts-builder
 WORKDIR /app
- 
-COPY package.json package.json
-COPY package-lock.json package-lock.json
- 
-RUN npm install
- 
 COPY . .
- 
-CMD [ "node", "app.ts" ]
+RUN npm install
+RUN npm run buildts
+
+FROM node:16 AS ts-prod
+WORKDIR /app
+COPY --from=ts-builder ./app/dist ./dist
+COPY package* ./
+RUN npm install --production
+
+CMD [ "npm", "start" ]

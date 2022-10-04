@@ -38,7 +38,7 @@ stages:
         command: buildAndPush
         buildContext: $(Build.Repository.LocalPath)
         repository: $(webRepository)
-        dockerfile: '$(Build.SourcesDirectory)/Tailspin.SpaceGame.Web/Dockerfile'
+        dockerfile: '$(Build.SourcesDirectory)/configurable-app-ts/Dockerfile'
         containerRegistry: 'Container Registry Connection'
         tags: |
           $(tag)
