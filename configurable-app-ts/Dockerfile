@@ -3,8 +3,8 @@ WORKDIR /app
 EXPOSE 80
 
 COPY . .
-RUN npm install -g typescript
-RUN npm install -g ts-node
+RUN npm install typescript
+RUN npm install ts-node
 RUN npm install
 RUN npm run tsc
 
