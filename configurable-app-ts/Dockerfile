@@ -2,8 +2,7 @@ FROM node:16 AS ts-builder
 WORKDIR /app
 EXPOSE 80
 
-COPY . .
-RUN ls -l
+COPY package* ./
 RUN npm install
 RUN npm run tsc
 
