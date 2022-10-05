@@ -9,7 +9,7 @@ RUN npm run tsc
 FROM ts-builder AS ts-prod
 WORKDIR /app
 COPY --from=ts-builder ./app/dist ./dist
-COPY package* ./
+#COPY package* ./
 RUN npm install
 
 CMD [ "npm", "start" ]
