@@ -9,7 +9,8 @@
     "dev": "nodemon --config nodemon.json src/app.ts",
     "buildts": "tsc",
     "cleandist": "rm -rf ./dist/* ",
-    "start": "node ./dist/app.js"
+    "start": "node ./dist/app.js",
+    "tsc":"tsc -project tsconfig.json"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
