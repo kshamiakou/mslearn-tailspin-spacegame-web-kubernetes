@@ -4,8 +4,8 @@ EXPOSE 80
 
 COPY . .
 RUN npm install
-RUN yarn global add typescript
-RUN tsc
+RUN npm install typescript
+RUN ./node_modules/typescript/bin/tsc -p ./tsconfig.json
 
 FROM ts-builder AS ts-prod
 WORKDIR /app
