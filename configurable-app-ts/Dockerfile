@@ -6,7 +6,7 @@ COPY . .
 RUN npm install typescript
 RUN npm install ts-node
 RUN npm install
-RUN npm run tsc
+RUN npm run
 
 FROM ts-builder AS ts-prod
 WORKDIR /app
