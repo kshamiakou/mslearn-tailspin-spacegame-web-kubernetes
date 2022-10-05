@@ -3,7 +3,7 @@ WORKDIR /app
 EXPOSE 80
 
 COPY package.json ./
-COPY src/tsconfig.json ./
+COPY tsconfig.json ./
 RUN npm install
 RUN npm run tsc
 
