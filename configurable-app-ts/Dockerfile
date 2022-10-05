@@ -2,9 +2,10 @@ FROM node:16 AS ts-builder
 WORKDIR /app
 EXPOSE 80
 
-COPY package* ./
+COPY package*.json ./
+COPY tsconfig*.json ./
 RUN npm install
-RUN npm run dev
+RUN npm run tsc
 
 FROM ts-builder AS ts-prod
 WORKDIR /app
