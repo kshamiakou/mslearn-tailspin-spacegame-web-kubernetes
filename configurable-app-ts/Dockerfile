@@ -4,7 +4,7 @@ EXPOSE 80
 
 COPY package* ./
 RUN npm install
-RUN npm run tsc
+RUN npm run dev
 
 FROM ts-builder AS ts-prod
 WORKDIR /app
