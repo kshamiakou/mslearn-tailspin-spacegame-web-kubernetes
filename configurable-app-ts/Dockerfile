@@ -3,10 +3,9 @@ WORKDIR /app
 EXPOSE 80
 
 COPY . .
-RUN npm install typescript
-RUN npm install ts-node
+RUN ls -l
 RUN npm install
-RUN npm run
+RUN npm run tsc
 
 FROM ts-builder AS ts-prod
 WORKDIR /app
