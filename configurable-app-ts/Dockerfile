@@ -2,15 +2,14 @@ FROM node:16 AS ts-builder
 WORKDIR /app
 EXPOSE 80
 
-COPY package.json ./
-COPY tsconfig.json ./
-RUN npm install
+COPY . .
+RUN npm install --production
 RUN npm run tsc
 
 FROM ts-builder AS ts-prod
 WORKDIR /app
 COPY --from=ts-builder ./app/dist ./dist
 COPY package* ./
-RUN npm install
+RUN npm install --production
 
 CMD [ "npm", "start" ]
